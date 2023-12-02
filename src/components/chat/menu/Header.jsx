@@ -54,8 +54,8 @@ const Header = () => {
             <Component>
                 <Image src={account.picture} onClick={() => toggleDrawer()} />
                 <Wrapper>
-                    <MessageIcon />
-                    <HeaderMenu/>
+                    <MessageIcon style={{ color: 'rgba(255,255,255,0.7)' }} />
+                    <HeaderMenu style={{ color: 'rgba(255,255,255,0.7)' }}/>
                 </Wrapper>
             </Component>
             <InfoDrawer open={openDrawer} setOpen={setOpenDrawer} profile={true} />

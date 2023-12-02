@@ -1,5 +1,9 @@
 import { createContext, useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const socketUrl = process.env.SOCKET_IO_URL
 
 export const AccountContext = createContext(null);
 
@@ -16,8 +20,9 @@ const AccountProvider = ({children}) => {
     const socket = useRef();
 
     useEffect(() => {
-        socket.current = io('ws://localhost:4000');
-    }, [])
+        socket.current = io(socketUrl);
+      }, []);
+    
 
     return (
         <AccountContext.Provider value={{ 

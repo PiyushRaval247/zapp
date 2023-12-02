@@ -1,7 +1,10 @@
   
 import axios from 'axios';
+import dotenv from 'dotenv'
 
-const url = 'https://zapchat.onrender.com';
+dotenv.config();
+const url = process.env.API_URL;
+
 
 export const addUser = async (data) => {
     try {
